@@ -1,0 +1,12 @@
+*~
+*.swp
+*.orig
+*.bak
+*.o
+*.d
+*.pyc
+*.a
+*.so
+
+# Dockerfile. This will be generated with ./build.sh
+Dockerfile

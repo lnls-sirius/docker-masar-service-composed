@@ -1,0 +1,13 @@
+[Unit]
+Description=MASAR Service container
+Requires=docker.service
+After=docker.service
+
+[Service]
+Restart=always
+#ExecStartPre=/bin/mkdir -p /usr/local/etc/docker-masar-service-composed/
+ExecStart=/usr/local/bin/docker-compose -d -f /usr/local/etc/docker-masar-service-composed/docker-composed.yml up
+ExecStop=/usr/local/bin/docker-compose -f /usr/local/etc/docker-masar-service-composed/docker-composed.yml down
+
+[Install]
+WantedBy=multi-user.target

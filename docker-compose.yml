@@ -1,0 +1,28 @@
+version: '2'
+services:
+  masar-service:
+    image: lnls/docker-masar-service
+    ports:
+      - "5064:5064/udp"
+      - "5064:5064/tcp"
+      - "5065:5065/udp"
+      - "5065:5065/tcp"
+      - "6678:6678/udp"
+      - "6678:6678/tcp"
+    container_name: masar-service
+    volumes:
+      - masar-service-config-volume:/var/lib/sqlite/config
+      - masar-service-data-volume:/var/lib/sqlite/data
+    networks:
+      - masar
+
+volumes:
+  masar-service-config-volume:
+    driver: local
+  masar-service-data-volume:
+    driver: local
+
+networks:
+  masar:
+    external:
+      name: dockerrbaccomposed_postgres-rbac
