@@ -7,8 +7,10 @@ services:
       - "5064:5064/tcp"
       - "5065:5065/udp"
       - "5065:5065/tcp"
-      - "6678:6678/udp"
-      - "6678:6678/tcp"
+      - "5075:5075/udp"
+      - "5075:5075/tcp"
+      - "5076:5076/udp"
+      - "5076:5076/tcp"
     container_name: masar-service
     volumes:
       - masar-service-config-volume:/var/lib/sqlite/config
