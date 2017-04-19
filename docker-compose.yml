@@ -12,6 +12,9 @@ services:
       - "5076:5076/udp"
       - "5076:5076/tcp"
     container_name: masar-service
+    dns:
+      - 10.0.0.71
+      - 10.0.0.72
     volumes:
       - masar-service-config-volume:/var/lib/sqlite/config
       - masar-service-data-volume:/var/lib/sqlite/data
